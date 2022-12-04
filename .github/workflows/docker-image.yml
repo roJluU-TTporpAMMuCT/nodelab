@@ -21,7 +21,7 @@ jobs:
         node-version: "18"
     
     - name: Install Lint
-      run: npm i --save-dev eslint
+      run: npm i lint
         
     - name: Run code quality checks
       run: npm run lint

@@ -14,10 +14,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: "18"
+    
+    - name: Install Lint
+      run: npm i --save-dev eslint
         
     - name: Run code quality checks
       run: npm run lint

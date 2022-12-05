@@ -23,9 +23,6 @@ jobs:
     - name: Install Lint
       run: npm i eslint
       
-    - name: Init Lint
-      run: npm init @eslint/config
-      
     - name: Lint Action
       uses: wearerequired/lint-action@v2.1.0
       with:

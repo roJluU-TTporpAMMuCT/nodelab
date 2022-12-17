@@ -17,3 +17,9 @@ Add action to run docker build .
 Add DockerHub login action for push purpose
 
 Add action for image push as latest
+
+
+# Lab Kubernetes
+Add folder k8s with deployment definition and loadbalancer definition(just apply this folder to minikube/kubernetes)
+
+It might require you to exec a *minikube tunnel* to make it accessible on your local machine(loadbalancer works on port 8765)

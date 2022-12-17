@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodelab-balancer
+spec:
+  selector:
+    app: nodelab
+  ports:
+  - port: 8765
+    targetPort: 8080
+  type: LoadBalancer

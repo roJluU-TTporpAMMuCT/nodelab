@@ -1,0 +1,30 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-nodelab
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodelab
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: nodelab
+    spec:
+      containers:
+      - image: negro228/nodelab:latest
+        name: nodelab
+        ports:
+        - containerPort: 8080
+          name: nodelab
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3
